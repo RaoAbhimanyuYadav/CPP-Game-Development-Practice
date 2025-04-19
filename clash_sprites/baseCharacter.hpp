@@ -13,6 +13,8 @@ public:
     Rectangle getCollisionRec();
     virtual void tick(float deltaTime);
     virtual Vector2 getScreenPos() = 0;
+    bool getAlive() const { return alive; }
+    void setAlive(bool isAlive) { alive = isAlive; }
 
 protected:
     // character texture
@@ -38,6 +40,9 @@ protected:
     // last position
     Vector2 lastFrameWorldPos{};
     Vector2 velocity{};
+
+private:
+    bool alive{1};
 };
 
 #endif
